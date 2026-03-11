@@ -1,0 +1,29 @@
+{
+  "name": "speckyai-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SpeckyAI monorepo. Use root package-lock.json only; run npm install from repo root.",
+  "scripts": {
+    "preinstall": "node -e \"var fs=require('fs'),p=require('path');var cwd=process.cwd();var lock=p.join(cwd,'package-lock.json');var pkg=p.join(cwd,'package.json');if(!fs.existsSync(lock)||!fs.existsSync(pkg))process.exit(0);var j=JSON.parse(fs.readFileSync(pkg,'utf8'));if(!j.workspaces){console.error('SpeckyAI: Run npm install from repo root (where package-lock.json is): c:\\\\Users\\\\lorai\\\\Projects\\\\SpeckyAI');process.exit(1);}\"",
+    "dev": "turbo dev --parallel",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "format": "prettier --write ."
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "server"
+  ],
+  "devDependencies": {
+    "turbo": "^2.0.5",
+    "typescript": "^5.6.3",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3"
+  },
+  "engines": {
+    "node": ">=18.18.0",
+    "npm": ">=9.0.0"
+  }
+}

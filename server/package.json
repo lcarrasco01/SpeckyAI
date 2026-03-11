@@ -1,0 +1,12 @@
+{
+  "name": "speckyai-server",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "echo \"(todo) prefer Next.js route handlers for Vercel\"",
+    "build": "echo \"(todo)\"",
+    "start": "echo \"(todo)\""
+  }
+}
+
